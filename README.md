@@ -15,15 +15,9 @@ A real-time hazardous gas monitoring system that detects carbon monoxide (CO) an
 
 Our system uses the following components assembled on a breadboard:
 
-<div align="center">
-  <img src="images/hardware_setup1.jpg" alt="Hardware Setup View 1" width="600">
-  <p><i>Hardware Setup - Arduino UNO with MQ sensors and ESP8266 module</i></p>
-</div>
+![image](https://github.com/user-attachments/assets/2c59c9e5-3875-4d71-a093-79b65473c96e)
+![image](https://github.com/user-attachments/assets/a25b0e54-6306-44bc-9d3f-0f65266d5088)
 
-<div align="center">
-  <img src="images/hardware_setup2.jpg" alt="Hardware Setup View 2" width="600">
-  <p><i>Alternative view of hardware implementation</i></p>
-</div>
 
 ### Hardware Requirements
 
