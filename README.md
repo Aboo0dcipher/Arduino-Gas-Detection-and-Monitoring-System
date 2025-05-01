@@ -186,6 +186,4 @@ The dashboard includes:
 
 [3] K. B. K. Sai et al., "IOT based Air Quality Monitoring System Using MQ135 and MQ7 with Machine Learning Analysis," 2019.
 
-## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
