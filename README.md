@@ -33,10 +33,8 @@ Our system uses the following components assembled on a breadboard:
 
 The system follows a straightforward data flow architecture:
 
-<div align="center">
-  <img src="images/system_architecture.jpg" alt="System Architecture" width="600">
-  <p><i>System Architecture Diagram - Data flow from sensors to user interface</i></p>
-</div>
+![image](https://github.com/user-attachments/assets/3a0a77f0-1358-49a5-a9e0-63beffeeb0e7)
+
 
 1. **Sensor Data**: MQ-4 and MQ-7 sensors collect gas concentration data
 2. **Arduino**: Processes the sensor readings
@@ -58,15 +56,11 @@ The system follows a straightforward data flow architecture:
 
 The web interface provides a comprehensive dashboard for monitoring gas levels:
 
-<div align="center">
-  <img src="images/normal_levels.jpg" alt="Dashboard with Normal Levels" width="700">
-  <p><i>Gas Sensor Dashboard showing normal gas levels</i></p>
-</div>
 
-<div align="center">
-  <img src="images/alert_levels.jpg" alt="Dashboard with Alert Levels" width="700">
-  <p><i>Gas Sensor Dashboard showing elevated methane levels with alert and suggestions</i></p>
-</div>
+![image](https://github.com/user-attachments/assets/5ed51027-73e5-447d-ac18-72dff770c6ef)
+
+![image](https://github.com/user-attachments/assets/6ad7958d-1e80-457e-9406-bdb779ec06fb)
+
 
 The dashboard includes:
 - **Top Header**: Gas Sensor Dashboard title
