@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Sensor Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #1a2980, #26d0ce);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dashboard {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            box-sizing: border-box;
+            height: 90%;
+            width: 90%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s;
+        }
+        .main-content {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+        }
+        .left-column, .right-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        h1 {
+            color: #fff;
+            background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+            padding: 10px 20px;
+            border-radius: 23px;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: pulse 2s infinite;
+            font-size: 2em;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        .threshold-input, .sensor, .suggestion {
+            width: 100%;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: #f7f7f7;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+        .threshold-input:hover, .sensor:hover, .suggestion:hover {
+            transform: translateY(-5px);
+            background: #e3f2fd;
+        }
+        .threshold-input label, .sensor p {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #0072ff;
+        }
+        .sensor-value {
+            font-size: 2.5em;
+            color: #FF6F61;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .sensor-value:hover {
+            color: #ff4444;
+            transform: scale(1.1);
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s;
+        }
+        .suggestion {
+            font-size: 1.4em;
+            color: #f7797d;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            background: rgba(255, 87, 51, 0.1);
+            border-radius: 8px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .suggestion:hover {
+            background: rgba(255, 87, 51, 0.2);
+            color: #ff4444;
+        }
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input:focus {
+            border-color: #0072ff;
+            box-shadow: 0 0 5px rgba(0, 114, 255, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+    <!-- Link to Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Link to external JavaScript file -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Gas Sensor Dashboard</h1>
+        <div class="main-content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Threshold Inputs -->
+                <div class="threshold-input">
+                    <label>Methane Threshold (ppm):</label>
+                    <input type="number" id="mq4-threshold" value="300" />
+                </div>
+                <div class="threshold-input">
+                    <label>Carbon Monoxide Threshold (ppm):</label>
+                    <input type="number" id="mq7-threshold" value="150" />
+                </div>
+
+                <!-- Sensor Data -->
+                <div class="sensor">
+                    <p>MQ-4 Sensor (Methane):</p>
+                    <div class="sensor-value" id="mq4">0 ppm</div>
+                </div>
+                <div class="sensor">
+                    <p>MQ-7 Sensor (Carbon Monoxide):</p>
+                    <div class="sensor-value" id="mq7">0 ppm</div>
+                </div>
+
+                <!-- User Suggestions -->
+                <div class="suggestion" id="suggestion">Gas levels are normal.</div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Bar Chart -->
+                <div class="chart-container" id="bar-chart-container">
+                    <canvas id="barChart"></canvas>
+                </div>
+
+                <!-- Line Chart -->
+                <div class="chart-container" id="line-chart-container">
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
