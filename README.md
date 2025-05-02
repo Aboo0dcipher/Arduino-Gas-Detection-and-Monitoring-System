@@ -124,10 +124,13 @@ The dashboard includes:
 
 
 ##NOTE:
-1.Ensure U have run the server first
 
 
-2.Install the packages required for the server "npm install"
+1.Install the packages required for the server "npm install"
+
+
+2.Once you are having the node-modules you can run the server then the index.html file
+
 
 ## 🚀 Usage
 
