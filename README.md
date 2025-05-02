@@ -120,7 +120,12 @@ The dashboard includes:
    - GND to GND on Arduino
    - RX to TX on Arduino
    - TX to RX on Arduino
-   - CH_PD/EN to 3.3V on Arduino
+   - CH_PD/EN to 3.3V on Arduino.
+
+
+##NOTE:
+1.Ensure U have run the server first
+2.Install the packages required for the server "npm install"
 
 ## 🚀 Usage
 
