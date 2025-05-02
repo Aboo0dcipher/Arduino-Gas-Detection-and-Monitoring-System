@@ -125,6 +125,8 @@ The dashboard includes:
 
 ##NOTE:
 1.Ensure U have run the server first
+
+
 2.Install the packages required for the server "npm install"
 
 ## 🚀 Usage
